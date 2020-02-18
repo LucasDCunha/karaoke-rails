@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  album_id: 1
+  genre_id: 1
+  name: MyString
+  composer: MyString
+
+two:
+  album_id: 1
+  genre_id: 1
+  name: MyString
+  composer: MyString
