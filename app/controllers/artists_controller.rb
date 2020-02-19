@@ -8,8 +8,8 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.new(artist_params)
-    @restaurant.save
+    @artist = Artist.new(artist_params)
+    @artist.save
   end
 
   def set_artist

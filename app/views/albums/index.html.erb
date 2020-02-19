@@ -1,0 +1,5 @@
+<ul>
+  <% @albums.each do |album| %>
+    <%= link_to "<li>#{album.title}</li>".html_safe, album_show_path(album) %>
+  <% end %>
+</ul>

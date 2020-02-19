@@ -1,0 +1,5 @@
+<ul>
+  <% @tracks.each do |track| %>
+    <%= link_to "<li>#{track.name}</li>".html_safe, track_show_path(track) %>
+  <% end %>
+</ul>

@@ -1,0 +1,5 @@
+<ul>
+  <% @genres.each do |genre| %>
+    <%= link_to "<li>#{genre.name}</li>".html_safe, genre_show_path(genre) %>
+  <% end %>
+</ul>
