@@ -10,37 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_225319) do
+ActiveRecord::Schema.define(version: 0) do
 
   create_table "albums", force: :cascade do |t|
-    t.string "title"
-    t.integer "artist_id_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["artist_id_id"], name: "index_albums_on_artist_id_id"
+    t.string "title", limit: 160, null: false
+    t.integer "artist_id", null: false
   end
 
   create_table "artists", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", limit: 120
   end
 
   create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "name", limit: 120
   end
 
+  create_table "media_types", force: :cascade do |t|
+    t.string "name", limit: 120
+  end
+
+# Could not dump table "sqlite_stat1" because of following StandardError
+#   Unknown type '' for column 'tbl'
+
   create_table "tracks", force: :cascade do |t|
-    t.integer "artist_id_id"
-    t.integer "genre_id_id"
-    t.string "name"
-    t.string "composer"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["artist_id_id"], name: "index_tracks_on_artist_id_id"
-    t.index ["genre_id_id"], name: "index_tracks_on_genre_id_id"
+    t.integer "album_id"
+    t.integer "media_type_id", null: false
+    t.integer "genre_id"
+    t.string "name", limit: 200, null: false
+    t.string "composer", limit: 220
+    t.integer "milliseconds", null: false
+    t.integer "bytes"
+    t.decimal "unit_price", precision: 10, scale: 2, null: false
   end
 
 end

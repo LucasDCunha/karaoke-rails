@@ -1,0 +1,5 @@
+<ul>
+  <% @artists.each do |artist| %>
+    <%= link_to "<li>#{artist.name}</li>".html_safe, artist_show_path(artist) %>
+  <% end %>
+</ul>
